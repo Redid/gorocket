@@ -9,8 +9,8 @@ import (
 
 type Client struct {
 	baseURL    string
-	userID     string
-	xToken     string
+	UserID     string
+	XToken     string
 	apiVersion string
 	HTTPClient *http.Client
 }
@@ -31,8 +31,8 @@ func NewClient(url string) *Client {
 func (c *Client) sendRequest(req *http.Request, v interface{}) error {
 	req.Header.Set("Accept", "application/json; charset=utf-8")
 	req.Header.Set("Content-Type", "application/json; charset=utf-8")
-	req.Header.Add("X-Auth-Token", c.xToken)
-	req.Header.Add("X-User-Id", c.userID)
+	req.Header.Add("X-Auth-Token", c.XToken)
+	req.Header.Add("X-User-Id", c.UserID)
 
 	res, err := c.HTTPClient.Do(req)
 	if err != nil {

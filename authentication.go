@@ -155,8 +155,8 @@ func (c *Client) Login(login *LoginPayload) (*LoginResponse, error) {
 
 	// success auth
 	if res.Status == "success" {
-		c.userID = res.Data.UserID
-		c.xToken = res.Data.AuthToken
+		c.UserID = res.Data.UserID
+		c.XToken = res.Data.AuthToken
 	}
 
 	return &res, nil
