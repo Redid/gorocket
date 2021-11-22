@@ -1,3 +1,3 @@
-module github.com/Redid/gorocket
+module github.com/redid/gorocket
 
 go 1.13
